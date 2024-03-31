@@ -10,7 +10,7 @@ fn main() {
   let mut name = out_name.file_stem().expect("文件后缀需要是wasm").to_os_string();
   name.push("_opt");
   out_name.set_file_name(name);
-  out_name.push(".wasm");
+  out_name.set_extension("wasm");
 
   let _ = m.emit_wasm_file(out_name);
 }
